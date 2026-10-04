@@ -1,0 +1,36 @@
+<!-- my_django_form/templates/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submission Successful</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; }
+        .success-container { background: white; padding: 30px; border-radius: 8px; max-width: 600px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: auto; }
+        h2 { color: #155724; border-bottom: 2px solid #d4edda; padding-bottom: 10px; margin-top: 0; }
+        .data-row { margin-bottom: 12px; font-size: 16px; line-height: 1.5; border-bottom: 1px dashed #eee; padding-bottom: 8px; }
+        .label { font-weight: bold; color: #555; display: inline-block; width: 220px; }
+        .back-link { display: inline-block; margin-top: 20px; color: #007bff; text-decoration: none; font-weight: bold; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="success-container">
+        <h2>Form Submitted Successfully!</h2>
+        
+        <!-- Displays the dictionary data sent from views.py -->
+        <div class="data-row"><span class="label">Student Name:</span> {{ submitted_data.stud_name }}</div>
+        <div class="data-row"><span class="label">Student ID:</span> {{ submitted_data.stud_id }}</div>
+        <div class="data-row"><span class="label">Major:</span> {{ submitted_data.major }}</div>
+        <div class="data-row"><span class="label">Class Standing:</span> {{ submitted_data.class_standing }}</div>
+        <div class="data-row"><span class="label">Languages Known:</span> {{ submitted_data.prog_languages|join:", " }}</div>
+        <div class="data-row"><span class="label">Expected Graduation Year:</span> {{ submitted_data.grad_year }}</div>
+        <div class="data-row"><span class="label">Comments:</span> {{ submitted_data.comments }}</div>
+
+        <!-- Links right back to the submission form -->
+        <a href="{% url 'student_form' %}" class="back-link">← Submit another response</a>
+    </div>
+
+</body>
+</html>

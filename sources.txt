@@ -1,1 +1,3 @@
 https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Forms
+django girls tutorial
+Github copilot(to get information on how to complete things not covered in django girls tutorial as well as the styles in html)
